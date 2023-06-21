@@ -5,8 +5,13 @@ body {
 }
 
 .container {
+    display: flex;
     height: 400px;
     width: 400px;
     border: 2px solid black;
     padding: 0;
+}
+
+div {
+    flex: 1;
 }
