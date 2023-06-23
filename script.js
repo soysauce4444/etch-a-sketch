@@ -5,7 +5,7 @@ function getNum () {
     return num;
 }
 
-function getDivs() {
+function makeDivs() {
     for (i = 0; i < 16; i++) {
         const div = document.createElement('div');
         container.appendChild(div);
@@ -15,18 +15,5 @@ function getDivs() {
     //return num;
 }
 
-function getSqrt(num) {
-    let i = 1;
-    while (i * i < num) {
-        i++;
-        (i * i == num) ? sqrt = i :
-        ++sqrt;
-    }
-    return (Math.floor(sqrt));
-}
-
 let num = 0;
-let sqrt = 1;
-getNum();
-getDivs();
-console.log(getSqrt(num));
+makeDivs();
