@@ -1,7 +1,11 @@
 body {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 17 px;
+    height: 100vh;
+    margin: 0;
 }
 
 .container {
@@ -11,12 +15,14 @@ body {
     width: 400px;
     border: 2px solid black;
     padding: 0;
+    box-sizing: border-box;
 }
 
-div {
-    flex: 1 1 25%;
+.container > div {
+    flex: 0 0 25%;
+    box-sizing: border-box;
 }
 
 .changeClr {
-    color: grey;
+    background-color: black;
 }
