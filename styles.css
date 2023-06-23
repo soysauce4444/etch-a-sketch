@@ -16,3 +16,7 @@ body {
 div {
     flex: 1 1 25%;
 }
+
+.changeClr {
+    color: grey;
+}
