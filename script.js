@@ -6,17 +6,14 @@ function getNum () {
     return parseInt(x);
 }
 
-const btn = document.querySelector('button');
-btn.addEventListener('click', () => {
-     num = getNum();
-    console.log(num);
-});
-
-function makeDivs() {
-    for (i = 0; i < 16; i++) {
+function makeDivs(y) {
+    for (i = 0; i < y; i++) {
         const div = document.createElement('div');
         container.appendChild(div);
     }
+}
+
+function changeClr() {
     const divs = document.querySelectorAll('.container > div');
     divs.forEach((div) => {
         div.addEventListener('mouseover', () => {
@@ -25,4 +22,13 @@ function makeDivs() {
     });
 }
 
-makeDivs();
+function setGrid() {
+    const btn = document.querySelector('button');
+    btn.addEventListener('click', () => {
+        num = getNum();
+        makeDivs(num);
+        changeClr();
+    });
+}
+
+setGrid();
