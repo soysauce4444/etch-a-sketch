@@ -2,7 +2,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*justify-content: center; */
     gap: 10px;
     height: 100vh;  
     padding: 10px;
@@ -20,10 +19,9 @@ body {
 }
 
 .container > div {
-    flex: 0 0 25%;
     box-sizing: border-box;
 }
 
 .changeClr {
-    background-color: black;
+    background-color: grey;
 }
