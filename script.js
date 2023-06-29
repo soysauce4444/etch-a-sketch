@@ -7,15 +7,25 @@ function randInt (min, max) {
 function makeClr () {
     const divs = document.querySelectorAll('.container > div'); 
     divs.forEach((div) =>{ 
+        const r = randInt(0, 255);
+        const g = randInt(0, 255);
+        const b = randInt(0, 255);
         div.addEventListener('mouseover', () => {
-            const r = randInt(0, 255);
-            const g = randInt(0, 255);
-            const b = randInt(0, 255);
             div.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
         });
     });
 }
 
+function darken() {
+    const divs = document.querySelectorAll('.container > div'); 
+    divs.forEach((div) => {
+        let i = 100;
+        div.addEventListener('mouseover', () => {
+            i -= 10;
+            div.style.filter = `brightness(${i}%)`;
+        });
+    });
+}
 
 let num = 0;
 function getNum () {
@@ -65,6 +75,7 @@ function makeGrid() {
         //changeClr();
         setGrid();
         makeClr();
+        darken();
     });
 }
 
