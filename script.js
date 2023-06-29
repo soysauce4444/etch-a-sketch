@@ -1,5 +1,22 @@
 const container = document.querySelector('.container');
 
+function randInt (min, max) {
+    return Math.floor (Math.random() * (max - min + 1) + min);
+}
+
+function makeClr () {
+    const divs = document.querySelectorAll('.container > div'); 
+    divs.forEach((div) =>{ 
+        div.addEventListener('mouseover', () => {
+            const r = randInt(0, 255);
+            const g = randInt(0, 255);
+            const b = randInt(0, 255);
+            div.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        });
+    });
+}
+
+
 let num = 0;
 function getNum () {
     let x = 1;
@@ -31,23 +48,23 @@ function changeClr() {
     });
 }
 
+let ratio = 0.0;
+function setGrid () {
+    const divs = document.querySelectorAll('.container > div');
+    const ratio = 1 / Math.sqrt(num) * 100;
+    divs.forEach((div) => {
+        div.style.flex = `0 0 ${ratio}%`;
+    });
+}
+
 function makeGrid() {
     const btn = document.querySelector('button');
     btn.addEventListener('click', () => {
         num = getNum() ** 2;
         makeDivs(num);
-        changeClr();
+        //changeClr();
         setGrid();
-    });
-}
-
-let ratio = 0.0;
-function setGrid () {
-    const divs = document.querySelectorAll('.container > div');
-    const ratio = 1 / Math.sqrt(num) * 100;
-    console.log(ratio);
-    divs.forEach((div) => {
-        div.style.flex = `0 0 ${ratio}%`;
+        makeClr();
     });
 }
 
